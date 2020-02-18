@@ -1,0 +1,31 @@
+<div class="menu_nuevo navbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <%= link_to "Empresas", interfaz_sistema_empresas_path, :class => "btn_menu_nuevo active", :id => "menu_btn_empresas" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Prospectos", interfaz_sistema_empresas_prospectos_path, :class => "btn_menu_nuevo", :id => "menu_btn_prospectos" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Reportes", interfaz_sistema_reportes_path, :class => "btn_menu_nuevo", :id => "menu_btn_reportes" %>
+        </li>
+
+        <% if @current_user.supervisor == 1 %>
+            <li class="nav-item">
+                <%= link_to "Indicadores", indicadores_interfaz_sistema_reportes_path, :class => "btn_menu_nuevo", :id => "menu_btn_indicadores" %>
+            </li>
+				<% end %>
+				<% if @current_user.supervisor == 1 %>
+					<li class="nav-item">
+						<%= link_to "Pagos En Linea", pagos_linea_interfaz_sistema_reportes_path, :class => "btn_menu_nuevo", :id => "menu_btn_pagos_linea" %>
+					</li>
+				<% end %> 
+        
+        <li class="nav-item">
+            <%= link_to "Notificaciones", interfaz_sistema_notificaciones_path, :class => "btn_menu_nuevo", :id => "menu_btn_notificaciones" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Salir", account_logout_path, :class => "btn_menu_nuevo", :id => "menu_btn_salir" %>
+        </li>
+    </ul>
+</div>
